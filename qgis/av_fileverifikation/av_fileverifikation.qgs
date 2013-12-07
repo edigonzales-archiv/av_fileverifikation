@@ -1,6 +1,6 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis projectname="" version="1.9.0-Master">
-    <title></title>
+<qgis projectname="Webgis Fileverifikation Amtliche Vermessung" version="1.9.0-Master">
+    <title>Webgis Fileverifikation Amtliche Vermessung</title>
     <mapcanvas>
         <units>meters</units>
         <extent>
@@ -38,7 +38,7 @@
                 </legendlayer>
             </legendgroup>
         </legendgroup>
-        <legendgroup open="true" checked="Qt::Unchecked" name="Gebäudeadressen">
+        <legendgroup open="false" checked="Qt::Unchecked" name="Gebäudeadressen">
             <legendgroup open="false" checked="Qt::Unchecked" name="Doppelte Achsen">
                 <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="Doppelte Achsen (Segment)" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
@@ -98,7 +98,7 @@
             </legendlayer>
         </legendgroup>
     </legend>
-    <Composer title="Composer 1" visible="0">
+    <Composer title="A4-Hochformat" visible="0">
         <Composition printResolution="200" paperWidth="210" snapGridOffsetX="0" snapGridResolution="0" snapGridOffsetY="0" alignmentSnap="1" snapping="0" numPages="2" paperHeight="297" alignmentSnapTolerance="2" printAsRaster="0">
             <ComposerPicture pictureWidth="15" file="./images/north-arrow_3_simple_symmetric_triangular_ziegler2.svg" pictureHeight="15" mapId="0">
                 <ComposerItem width="15" x="182.747" y="21.092" rotation="0" height="15" frame="false" outlineWidth="0.3" zValue="32" lastValidViewScaleFactor="4.60664" id="" positionLock="true">
@@ -122,10 +122,10 @@
                     <BackgroundColor alpha="0" red="255" blue="255" green="255"/>
                 </ComposerItem>
             </ComposerLabel>
-            <ComposerLegend symbolWidth="5" title="Legend" groupSpace="1" itemFont="Frutiger 55 Roman,10,-1,5,50,0,0,0,0,0" symbolSpace="1" map="0" layerSpace="2" titleFont="Frutiger 55 Roman,12,-1,5,50,0,0,0,0,0" wrapChar="" layerFont="Frutiger 55 Roman,10,-1,5,50,0,0,0,0,0" columnCount="1" iconLabelSpace="2" groupFont="Frutiger 55 Roman,12,-1,5,50,0,0,0,0,0" columnSpace="2" symbolHeight="3" equalColumnWidth="0" splitLayer="0" boxSpace="2">
+            <ComposerLegend symbolWidth="5" title="Legende" groupSpace="5" itemFont="Frutiger 55 Roman,9,-1,5,50,0,0,0,0,0" symbolSpace="1" map="0" layerSpace="1" titleFont="Frutiger 55 Roman,12,-1,5,75,0,0,0,0,0" wrapChar="" layerFont="Frutiger 55 Roman,10,-1,5,50,0,0,0,0,0" columnCount="1" iconLabelSpace="2" groupFont="Frutiger 55 Roman,11,-1,5,50,1,0,0,0,0" columnSpace="2" symbolHeight="3" equalColumnWidth="0" splitLayer="0" boxSpace="2">
                 <Model autoUpdate="1">
-                    <LayerItem layerId="mbsf20131205175630924" text="Gemeindegrenzen [119]" showFeatureCount="1">
-                        <VectorClassificationItemNg text="> 1:20000 [119]">
+                    <LayerItem layerId="mbsf20131205175630924" text="Gemeindegrenzen" showFeatureCount="0">
+                        <VectorClassificationItemNg text="> 1:20000">
                             <symbols>
                                 <symbol outputUnit="MM" alpha="1" type="fill" name="classificationSymbol">
                                     <layer pass="0" class="SimpleLine" locked="0">
@@ -141,7 +141,7 @@
                                 </symbol>
                             </symbols>
                         </VectorClassificationItemNg>
-                        <VectorClassificationItemNg text="&lt; 1:20000 [119]">
+                        <VectorClassificationItemNg text="&lt; 1:20000">
                             <symbols>
                                 <symbol outputUnit="MM" alpha="1" type="fill" name="classificationSymbol">
                                     <layer pass="0" class="SimpleLine" locked="0">
@@ -158,7 +158,171 @@
                             </symbols>
                         </VectorClassificationItemNg>
                     </LayerItem>
-                    <LayerItem layerId="t_gebaeudeadressen_spinnennetz20131205171228584" text="Spinnennetz" showFeatureCount="0">
+                    <GroupItem text="Einzelobjekte"/>
+                    <LayerItem layerId="t_doppelte_eo_linien20131206150641864" text="Doppelte EO.Linien (Segmente)" showFeatureCount="0">
+                        <VectorClassificationItemNg text="> 1:20000">
+                            <symbols>
+                                <symbol outputUnit="MM" alpha="1" type="line" name="classificationSymbol">
+                                    <layer pass="0" class="SimpleLine" locked="0">
+                                        <prop k="capstyle" v="square"/>
+                                        <prop k="color" v="255,0,0,255"/>
+                                        <prop k="customdash" v="5;2"/>
+                                        <prop k="joinstyle" v="bevel"/>
+                                        <prop k="offset" v="0"/>
+                                        <prop k="penstyle" v="solid"/>
+                                        <prop k="use_custom_dash" v="0"/>
+                                        <prop k="width" v="0.2"/>
+                                    </layer>
+                                    <layer pass="0" class="MarkerLine" locked="0">
+                                        <prop k="interval" v="3"/>
+                                        <prop k="offset" v="0"/>
+                                        <prop k="placement" v="vertex"/>
+                                        <prop k="rotate" v="1"/>
+                                        <symbol outputUnit="MM" alpha="1" type="marker" name="@classificationSymbol@1">
+                                            <layer pass="0" class="SimpleMarker" locked="0">
+                                                <prop k="angle" v="0"/>
+                                                <prop k="color" v="255,0,0,255"/>
+                                                <prop k="color_border" v="255,0,0,255"/>
+                                                <prop k="name" v="circle"/>
+                                                <prop k="offset" v="0,0"/>
+                                                <prop k="scale_method" v="area"/>
+                                                <prop k="size" v="1.2"/>
+                                            </layer>
+                                        </symbol>
+                                    </layer>
+                                </symbol>
+                            </symbols>
+                        </VectorClassificationItemNg>
+                        <VectorClassificationItemNg text="&lt; 1:20000">
+                            <symbols>
+                                <symbol outputUnit="MM" alpha="1" type="line" name="classificationSymbol">
+                                    <layer pass="0" class="SimpleLine" locked="0">
+                                        <prop k="capstyle" v="square"/>
+                                        <prop k="color" v="255,0,0,255"/>
+                                        <prop k="customdash" v="5;2"/>
+                                        <prop k="joinstyle" v="bevel"/>
+                                        <prop k="offset" v="0"/>
+                                        <prop k="penstyle" v="solid"/>
+                                        <prop k="use_custom_dash" v="0"/>
+                                        <prop k="width" v="0.4"/>
+                                    </layer>
+                                    <layer pass="0" class="MarkerLine" locked="0">
+                                        <prop k="interval" v="3"/>
+                                        <prop k="offset" v="0"/>
+                                        <prop k="placement" v="vertex"/>
+                                        <prop k="rotate" v="1"/>
+                                        <symbol outputUnit="MM" alpha="1" type="marker" name="@classificationSymbol@1">
+                                            <layer pass="0" class="SimpleMarker" locked="0">
+                                                <prop k="angle" v="0"/>
+                                                <prop k="color" v="255,0,0,255"/>
+                                                <prop k="color_border" v="255,0,0,255"/>
+                                                <prop k="name" v="circle"/>
+                                                <prop k="offset" v="0,0"/>
+                                                <prop k="scale_method" v="area"/>
+                                                <prop k="size" v="2"/>
+                                            </layer>
+                                        </symbol>
+                                    </layer>
+                                </symbol>
+                            </symbols>
+                        </VectorClassificationItemNg>
+                    </LayerItem>
+                    <GroupItem text="Gebäudeadressen"/>
+                    <LayerItem layerId="t_doppelte_achsen20131206114255860" text="Doppelte Achsen (Segment)" showFeatureCount="0">
+                        <VectorClassificationItemNg text="> 1:20000">
+                            <symbols>
+                                <symbol outputUnit="MM" alpha="1" type="line" name="classificationSymbol">
+                                    <layer pass="0" class="SimpleLine" locked="0">
+                                        <prop k="capstyle" v="square"/>
+                                        <prop k="color" v="255,0,0,255"/>
+                                        <prop k="customdash" v="5;2"/>
+                                        <prop k="joinstyle" v="bevel"/>
+                                        <prop k="offset" v="0"/>
+                                        <prop k="penstyle" v="solid"/>
+                                        <prop k="use_custom_dash" v="0"/>
+                                        <prop k="width" v="0.2"/>
+                                    </layer>
+                                    <layer pass="0" class="MarkerLine" locked="0">
+                                        <prop k="interval" v="3"/>
+                                        <prop k="offset" v="0"/>
+                                        <prop k="placement" v="vertex"/>
+                                        <prop k="rotate" v="1"/>
+                                        <symbol outputUnit="MM" alpha="1" type="marker" name="@classificationSymbol@1">
+                                            <layer pass="0" class="SimpleMarker" locked="0">
+                                                <prop k="angle" v="0"/>
+                                                <prop k="color" v="255,0,0,255"/>
+                                                <prop k="color_border" v="255,0,0,255"/>
+                                                <prop k="name" v="circle"/>
+                                                <prop k="offset" v="0,0"/>
+                                                <prop k="scale_method" v="area"/>
+                                                <prop k="size" v="1.2"/>
+                                            </layer>
+                                        </symbol>
+                                    </layer>
+                                </symbol>
+                            </symbols>
+                        </VectorClassificationItemNg>
+                        <VectorClassificationItemNg text="&lt; 1:20000">
+                            <symbols>
+                                <symbol outputUnit="MM" alpha="1" type="line" name="classificationSymbol">
+                                    <layer pass="0" class="SimpleLine" locked="0">
+                                        <prop k="capstyle" v="square"/>
+                                        <prop k="color" v="255,0,0,255"/>
+                                        <prop k="customdash" v="5;2"/>
+                                        <prop k="joinstyle" v="bevel"/>
+                                        <prop k="offset" v="0"/>
+                                        <prop k="penstyle" v="solid"/>
+                                        <prop k="use_custom_dash" v="0"/>
+                                        <prop k="width" v="0.4"/>
+                                    </layer>
+                                    <layer pass="0" class="MarkerLine" locked="0">
+                                        <prop k="interval" v="3"/>
+                                        <prop k="offset" v="0"/>
+                                        <prop k="placement" v="vertex"/>
+                                        <prop k="rotate" v="1"/>
+                                        <symbol outputUnit="MM" alpha="1" type="marker" name="@classificationSymbol@1">
+                                            <layer pass="0" class="SimpleMarker" locked="0">
+                                                <prop k="angle" v="0"/>
+                                                <prop k="color" v="255,0,0,255"/>
+                                                <prop k="color_border" v="255,0,0,255"/>
+                                                <prop k="name" v="circle"/>
+                                                <prop k="offset" v="0,0"/>
+                                                <prop k="scale_method" v="area"/>
+                                                <prop k="size" v="2"/>
+                                            </layer>
+                                        </symbol>
+                                    </layer>
+                                </symbol>
+                            </symbols>
+                        </VectorClassificationItemNg>
+                    </LayerItem>
+                    <LayerItem layerId="t_falscher_anfangspunkt20131206113219586" text="Falscher Anfangspunkt (Punkt)" showFeatureCount="0">
+                        <VectorClassificationItemNg text="">
+                            <symbols>
+                                <symbol outputUnit="MM" alpha="1" type="marker" name="classificationSymbol">
+                                    <layer pass="0" class="SimpleMarker" locked="0">
+                                        <prop k="angle" v="0"/>
+                                        <prop k="color" v="255,0,0,255"/>
+                                        <prop k="color_border" v="255,0,0,255"/>
+                                        <prop k="name" v="circle"/>
+                                        <prop k="offset" v="0,0"/>
+                                        <prop k="scale_method" v="area"/>
+                                        <prop k="size" v="2"/>
+                                    </layer>
+                                    <layer pass="0" class="SimpleMarker" locked="0">
+                                        <prop k="angle" v="0"/>
+                                        <prop k="color" v="255,0,0,255"/>
+                                        <prop k="color_border" v="0,0,0,255"/>
+                                        <prop k="name" v="cross2"/>
+                                        <prop k="offset" v="0,0"/>
+                                        <prop k="scale_method" v="area"/>
+                                        <prop k="size" v="2"/>
+                                    </layer>
+                                </symbol>
+                            </symbols>
+                        </VectorClassificationItemNg>
+                    </LayerItem>
+                    <LayerItem layerId="t_gebaeudeadressen_spinnennetz20131205171228584" text="Spinnennetz Linien" showFeatureCount="0">
                         <VectorClassificationItemNg text="> 1:20000">
                             <symbols>
                                 <symbol outputUnit="MM" alpha="1" type="line" name="classificationSymbol">
@@ -192,37 +356,48 @@
                             </symbols>
                         </VectorClassificationItemNg>
                     </LayerItem>
-                    <LayerItem layerId="bpav_10000_sw20131205174025556" text="Basisplan" showFeatureCount="0">
-                        <RasterClassificationItem layerId="bpav_10000_sw20131205174025556" color="#ffffff" text="0"/>
-                        <RasterClassificationItem layerId="bpav_10000_sw20131205174025556" color="#a0a0a0" text="1"/>
-                    </LayerItem>
-                    <LayerItem layerId="Amtliche_Vermessung__grau_20131205173952643" text="Plan für das Grundbuch" showFeatureCount="0"/>
-                    <LayerItem layerId="t_shortestline_hausnummerpos20131206101701953" text="t_shortestline_hausnummerpos" showFeatureCount="0">
-                        <VectorClassificationItemNg text="">
+                    <LayerItem layerId="t_shortestline_hausnummerpos20131206101701953" text="Shortest Line" showFeatureCount="0">
+                        <VectorClassificationItemNg text="> 1:20000">
                             <symbols>
                                 <symbol outputUnit="MM" alpha="1" type="line" name="classificationSymbol">
                                     <layer pass="0" class="SimpleLine" locked="0">
                                         <prop k="capstyle" v="square"/>
-                                        <prop k="color" v="54,160,100,255"/>
+                                        <prop k="color" v="0,85,255,255"/>
                                         <prop k="customdash" v="5;2"/>
                                         <prop k="joinstyle" v="bevel"/>
                                         <prop k="offset" v="0"/>
                                         <prop k="penstyle" v="solid"/>
                                         <prop k="use_custom_dash" v="0"/>
-                                        <prop k="width" v="0.26"/>
+                                        <prop k="width" v="0.2"/>
+                                    </layer>
+                                </symbol>
+                            </symbols>
+                        </VectorClassificationItemNg>
+                        <VectorClassificationItemNg text="&lt; 1:20000">
+                            <symbols>
+                                <symbol outputUnit="MM" alpha="1" type="line" name="classificationSymbol">
+                                    <layer pass="0" class="SimpleLine" locked="0">
+                                        <prop k="capstyle" v="square"/>
+                                        <prop k="color" v="0,85,255,255"/>
+                                        <prop k="customdash" v="5;2"/>
+                                        <prop k="joinstyle" v="bevel"/>
+                                        <prop k="offset" v="0"/>
+                                        <prop k="penstyle" v="solid"/>
+                                        <prop k="use_custom_dash" v="0"/>
+                                        <prop k="width" v="0.4"/>
                                     </layer>
                                 </symbol>
                             </symbols>
                         </VectorClassificationItemNg>
                     </LayerItem>
-                    <LayerItem layerId="v_gebaeudeadressen_hausnummerpos20131206101937667" text="v_gebaeudeadressen_hausnummerpos" showFeatureCount="0">
+                    <LayerItem layerId="gebaeudeadressen_strassenstueck20131206103514140" text="Anfangspunkt" showFeatureCount="0">
                         <VectorClassificationItemNg text="">
                             <symbols>
-                                <symbol outputUnit="MM" alpha="1" type="marker" name="classificationSymbol">
+                                <symbol outputUnit="MM" alpha="0.6" type="marker" name="classificationSymbol">
                                     <layer pass="0" class="SimpleMarker" locked="0">
                                         <prop k="angle" v="0"/>
-                                        <prop k="color" v="141,25,249,255"/>
-                                        <prop k="color_border" v="0,0,0,255"/>
+                                        <prop k="color" v="0,170,0,255"/>
+                                        <prop k="color_border" v="255,255,255,255"/>
                                         <prop k="name" v="circle"/>
                                         <prop k="offset" v="0,0"/>
                                         <prop k="scale_method" v="area"/>
@@ -232,112 +407,42 @@
                             </symbols>
                         </VectorClassificationItemNg>
                     </LayerItem>
-                    <LayerItem layerId="v_strassenstueck_lokname20131206103035269" text="v_strassenstueck_lokname" showFeatureCount="0">
+                    <LayerItem layerId="v_strassenstueck_lokname20131206103035269" text="Strassenstück" showFeatureCount="0">
                         <VectorClassificationItemNg text="">
                             <symbols>
-                                <symbol outputUnit="MM" alpha="1" type="line" name="classificationSymbol">
+                                <symbol outputUnit="MM" alpha="0.6" type="line" name="classificationSymbol">
                                     <layer pass="0" class="SimpleLine" locked="0">
-                                        <prop k="capstyle" v="square"/>
-                                        <prop k="color" v="188,23,203,255"/>
-                                        <prop k="customdash" v="5;2"/>
+                                        <prop k="capstyle" v="flat"/>
+                                        <prop k="color" v="0,170,0,255"/>
+                                        <prop k="customdash" v="2;1"/>
                                         <prop k="joinstyle" v="bevel"/>
                                         <prop k="offset" v="0"/>
-                                        <prop k="penstyle" v="solid"/>
+                                        <prop k="penstyle" v="dash"/>
                                         <prop k="use_custom_dash" v="0"/>
-                                        <prop k="width" v="0.26"/>
-                                    </layer>
-                                </symbol>
-                            </symbols>
-                        </VectorClassificationItemNg>
-                    </LayerItem>
-                    <LayerItem layerId="gebaeudeadressen_strassenstueck20131206103514140" text="gebaeudeadressen_strassenstueck" showFeatureCount="0">
-                        <VectorClassificationItemNg text="">
-                            <symbols>
-                                <symbol outputUnit="MM" alpha="1" type="marker" name="classificationSymbol">
-                                    <layer pass="0" class="SimpleMarker" locked="0">
-                                        <prop k="angle" v="0"/>
-                                        <prop k="color" v="154,76,127,255"/>
-                                        <prop k="color_border" v="0,0,0,255"/>
-                                        <prop k="name" v="circle"/>
-                                        <prop k="offset" v="0,0"/>
-                                        <prop k="scale_method" v="area"/>
-                                        <prop k="size" v="2"/>
-                                    </layer>
-                                </symbol>
-                            </symbols>
-                        </VectorClassificationItemNg>
-                    </LayerItem>
-                    <LayerItem layerId="t_falscher_anfangspunkt20131206113219586" text="t_falscher_anfangspunkt" showFeatureCount="0">
-                        <VectorClassificationItemNg text="">
-                            <symbols>
-                                <symbol outputUnit="MM" alpha="1" type="marker" name="classificationSymbol">
-                                    <layer pass="0" class="SimpleMarker" locked="0">
-                                        <prop k="angle" v="0"/>
-                                        <prop k="color" v="216,160,187,255"/>
-                                        <prop k="color_border" v="0,0,0,255"/>
-                                        <prop k="name" v="circle"/>
-                                        <prop k="offset" v="0,0"/>
-                                        <prop k="scale_method" v="area"/>
-                                        <prop k="size" v="2"/>
-                                    </layer>
-                                </symbol>
-                            </symbols>
-                        </VectorClassificationItemNg>
-                    </LayerItem>
-                    <LayerItem layerId="t_doppelte_achsen20131206114255860" text="t_doppelte_achsen" showFeatureCount="0">
-                        <VectorClassificationItemNg text="">
-                            <symbols>
-                                <symbol outputUnit="MM" alpha="1" type="line" name="classificationSymbol">
-                                    <layer pass="0" class="SimpleLine" locked="0">
-                                        <prop k="capstyle" v="square"/>
-                                        <prop k="color" v="77,200,11,255"/>
-                                        <prop k="customdash" v="5;2"/>
-                                        <prop k="joinstyle" v="bevel"/>
-                                        <prop k="offset" v="0"/>
-                                        <prop k="penstyle" v="solid"/>
-                                        <prop k="use_custom_dash" v="0"/>
-                                        <prop k="width" v="0.26"/>
-                                    </layer>
-                                </symbol>
-                            </symbols>
-                        </VectorClassificationItemNg>
-                    </LayerItem>
-                    <LayerItem layerId="t_doppelte_eo_linien20131206150641864" text="t_doppelte_eo_linien" showFeatureCount="0">
-                        <VectorClassificationItemNg text="">
-                            <symbols>
-                                <symbol outputUnit="MM" alpha="1" type="line" name="classificationSymbol">
-                                    <layer pass="0" class="SimpleLine" locked="0">
-                                        <prop k="capstyle" v="square"/>
-                                        <prop k="color" v="145,240,147,255"/>
-                                        <prop k="customdash" v="5;2"/>
-                                        <prop k="joinstyle" v="bevel"/>
-                                        <prop k="offset" v="0"/>
-                                        <prop k="penstyle" v="solid"/>
-                                        <prop k="use_custom_dash" v="0"/>
-                                        <prop k="width" v="0.26"/>
+                                        <prop k="width" v="0.6"/>
                                     </layer>
                                 </symbol>
                             </symbols>
                         </VectorClassificationItemNg>
                     </LayerItem>
                 </Model>
-                <ComposerItem width="66.3" x="12.0834" y="333.004" rotation="0" height="136.3" frame="false" outlineWidth="0.3" zValue="18" lastValidViewScaleFactor="3.22819" id="" positionLock="false">
+                <ComposerItem width="55.1" x="13" y="317.581" rotation="0" height="133.4" frame="false" outlineWidth="0.3" zValue="19" lastValidViewScaleFactor="4.50909" id="" positionLock="true">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
             </ComposerLegend>
-            <ComposerLabel valign="64" labelText="Tel. 032 627 75 92, Fax 032 627 22 14, E-Mail: sogis@bd.so.ch, Web: www.sogis.ch" halign="2" margin="0">
-                <LabelFont description="Frutiger 55 Roman,6,-1,5,50,0,0,0,0,0"/>
-                <FontColor red="0" blue="0" green="0"/>
-                <ComposerItem width="4" x="11" y="10" rotation="270" height="98.2829" frame="false" outlineWidth="0.3" zValue="16" lastValidViewScaleFactor="6.45638" id="" positionLock="true">
-                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
-                    <BackgroundColor alpha="0" red="255" blue="255" green="255"/>
-                </ComposerItem>
-            </ComposerLabel>
             <ComposerLabel valign="64" labelText="Amt für Geoinformation, SO!GIS Koordination, Rötistrasse 4, 4501 Solothurn" halign="1" margin="0">
                 <LabelFont description="Frutiger 55 Roman,6,-1,5,50,0,0,0,0,0"/>
                 <FontColor red="0" blue="0" green="0"/>
                 <ComposerItem width="4" x="11" y="190" rotation="270" height="97.0659" frame="false" outlineWidth="0.3" zValue="16" lastValidViewScaleFactor="4.60664" id="" positionLock="true">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="0" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerLabel>
+            <ComposerLabel valign="64" labelText="Tel. 032 627 75 92, Fax 032 627 22 14, E-Mail: sogis@bd.so.ch, Web: www.sogis.ch" halign="2" margin="0">
+                <LabelFont description="Frutiger 55 Roman,6,-1,5,50,0,0,0,0,0"/>
+                <FontColor red="0" blue="0" green="0"/>
+                <ComposerItem width="4" x="11" y="10" rotation="270" height="98.2829" frame="false" outlineWidth="0.3" zValue="16" lastValidViewScaleFactor="6.45638" id="" positionLock="true">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="0" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -348,50 +453,10 @@
                     <BackgroundColor alpha="0" red="255" blue="255" green="255"/>
                 </ComposerItem>
             </ComposerPicture>
-            <ComposerLabel valign="32" labelText="$CURRENT_DATE(dd.MM.yyyy)" halign="1" margin="0">
-                <LabelFont description="Frutiger 55 Roman,7,-1,5,50,0,0,0,0,0"/>
+            <ComposerLabel valign="32" labelText="Amt für Geoinformation" halign="1" margin="0">
+                <LabelFont description="Frutiger 55 Roman,7,-1,5,75,1,0,0,0,0"/>
                 <FontColor red="0" blue="0" green="0"/>
-                <ComposerItem width="15.6684" x="128" y="20" rotation="0" height="3.91709" frame="false" outlineWidth="0.3" zValue="10" lastValidViewScaleFactor="2.22483" id="" positionLock="true">
-                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
-                    <BackgroundColor alpha="0" red="255" blue="255" green="255"/>
-                </ComposerItem>
-            </ComposerLabel>
-            <ComposerLabel valign="32" labelText="Erstellungsdatum:" halign="1" margin="0">
-                <LabelFont description="Frutiger 55 Roman,7,-1,5,50,0,0,0,0,0"/>
-                <FontColor red="0" blue="0" green="0"/>
-                <ComposerItem width="23.0506" x="105" y="20" rotation="0" height="3.91709" frame="false" outlineWidth="0.3" zValue="10" lastValidViewScaleFactor="2.22483" id="" positionLock="true">
-                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
-                    <BackgroundColor alpha="0" red="255" blue="255" green="255"/>
-                </ComposerItem>
-            </ComposerLabel>
-            <ComposerLabel valign="32" labelText="Aus den Daten können keine rechtlichen Ansprüche, &#xa;insbesondere auch keine Haftung des Kantons abgeleitet werden." halign="1" margin="0">
-                <LabelFont description="Frutiger 55 Roman,7,-1,5,50,0,0,0,0,0"/>
-                <FontColor red="0" blue="0" green="0"/>
-                <ComposerItem width="79.1052" x="105" y="29" rotation="0" height="6.81699" frame="false" outlineWidth="0.3" zValue="10" lastValidViewScaleFactor="2.22483" id="" positionLock="true">
-                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
-                    <BackgroundColor alpha="0" red="255" blue="255" green="255"/>
-                </ComposerItem>
-            </ComposerLabel>
-            <ComposerLabel valign="32" labelText="agi@bd.so.ch&#xa;www.agi.so.ch" halign="1" margin="0">
-                <LabelFont description="Frutiger 55 Roman,7,-1,5,50,1,0,0,0,0"/>
-                <FontColor red="0" blue="0" green="0"/>
-                <ComposerItem width="28.2872" x="65" y="29" rotation="0" height="6.81699" frame="false" outlineWidth="0.3" zValue="10" lastValidViewScaleFactor="4.60664" id="" positionLock="true">
-                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
-                    <BackgroundColor alpha="0" red="255" blue="255" green="255"/>
-                </ComposerItem>
-            </ComposerLabel>
-            <ComposerLabel valign="32" labelText="Telefon 032 627 75 92&#xa;Telefax 032 627 75 98" halign="1" margin="0">
-                <LabelFont description="Frutiger 55 Roman,7,-1,5,50,1,0,0,0,0"/>
-                <FontColor red="0" blue="0" green="0"/>
-                <ComposerItem width="28.2872" x="65" y="20" rotation="0" height="6.81699" frame="false" outlineWidth="0.3" zValue="10" lastValidViewScaleFactor="4.60664" id="" positionLock="true">
-                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
-                    <BackgroundColor alpha="0" red="255" blue="255" green="255"/>
-                </ComposerItem>
-            </ComposerLabel>
-            <ComposerLabel valign="32" labelText="Rötistrasse 4&#xa;4501 Solothurn" halign="1" margin="0">
-                <LabelFont description="Frutiger 55 Roman,7,-1,5,50,1,0,0,0,0"/>
-                <FontColor red="0" blue="0" green="0"/>
-                <ComposerItem width="35.7058" x="17" y="29" rotation="0" height="8.06016" frame="false" outlineWidth="0.3" zValue="10" lastValidViewScaleFactor="4.60664" id="" positionLock="true">
+                <ComposerItem width="38.2669" x="17" y="20" rotation="0" height="4" frame="false" outlineWidth="0.3" zValue="10" lastValidViewScaleFactor="4.60664" id="" positionLock="true">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="0" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -404,10 +469,50 @@
                     <BackgroundColor alpha="0" red="255" blue="255" green="255"/>
                 </ComposerItem>
             </ComposerLabel>
-            <ComposerLabel valign="32" labelText="Amt für Geoinformation" halign="1" margin="0">
-                <LabelFont description="Frutiger 55 Roman,7,-1,5,75,1,0,0,0,0"/>
+            <ComposerLabel valign="32" labelText="Rötistrasse 4&#xa;4501 Solothurn" halign="1" margin="0">
+                <LabelFont description="Frutiger 55 Roman,7,-1,5,50,1,0,0,0,0"/>
                 <FontColor red="0" blue="0" green="0"/>
-                <ComposerItem width="38.2669" x="17" y="20" rotation="0" height="4" frame="false" outlineWidth="0.3" zValue="10" lastValidViewScaleFactor="4.60664" id="" positionLock="true">
+                <ComposerItem width="35.7058" x="17" y="29" rotation="0" height="8.06016" frame="false" outlineWidth="0.3" zValue="10" lastValidViewScaleFactor="4.60664" id="" positionLock="true">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="0" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerLabel>
+            <ComposerLabel valign="32" labelText="Telefon 032 627 75 92&#xa;Telefax 032 627 75 98" halign="1" margin="0">
+                <LabelFont description="Frutiger 55 Roman,7,-1,5,50,1,0,0,0,0"/>
+                <FontColor red="0" blue="0" green="0"/>
+                <ComposerItem width="28.2872" x="65" y="20" rotation="0" height="6.81699" frame="false" outlineWidth="0.3" zValue="10" lastValidViewScaleFactor="4.60664" id="" positionLock="true">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="0" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerLabel>
+            <ComposerLabel valign="32" labelText="agi@bd.so.ch&#xa;www.agi.so.ch" halign="1" margin="0">
+                <LabelFont description="Frutiger 55 Roman,7,-1,5,50,1,0,0,0,0"/>
+                <FontColor red="0" blue="0" green="0"/>
+                <ComposerItem width="28.2872" x="65" y="29" rotation="0" height="6.81699" frame="false" outlineWidth="0.3" zValue="10" lastValidViewScaleFactor="4.60664" id="" positionLock="true">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="0" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerLabel>
+            <ComposerLabel valign="32" labelText="Aus den Daten können keine rechtlichen Ansprüche, &#xa;insbesondere auch keine Haftung des Kantons abgeleitet werden." halign="1" margin="0">
+                <LabelFont description="Frutiger 55 Roman,7,-1,5,50,0,0,0,0,0"/>
+                <FontColor red="0" blue="0" green="0"/>
+                <ComposerItem width="79.1052" x="105" y="29" rotation="0" height="6.81699" frame="false" outlineWidth="0.3" zValue="10" lastValidViewScaleFactor="2.22483" id="" positionLock="true">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="0" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerLabel>
+            <ComposerLabel valign="32" labelText="Erstellungsdatum:" halign="1" margin="0">
+                <LabelFont description="Frutiger 55 Roman,7,-1,5,50,0,0,0,0,0"/>
+                <FontColor red="0" blue="0" green="0"/>
+                <ComposerItem width="23.0506" x="105" y="20" rotation="0" height="3.91709" frame="false" outlineWidth="0.3" zValue="10" lastValidViewScaleFactor="2.22483" id="" positionLock="true">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="0" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerLabel>
+            <ComposerLabel valign="32" labelText="$CURRENT_DATE(dd.MM.yyyy)" halign="1" margin="0">
+                <LabelFont description="Frutiger 55 Roman,7,-1,5,50,0,0,0,0,0"/>
+                <FontColor red="0" blue="0" green="0"/>
+                <ComposerItem width="15.6684" x="128" y="20" rotation="0" height="3.91709" frame="false" outlineWidth="0.3" zValue="10" lastValidViewScaleFactor="2.22483" id="" positionLock="true">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="0" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -431,7 +536,7 @@
                         </layer>
                     </symbol>
                 </overviewFrame>
-                <Extent ymin="228450" xmin="604263" ymax="228993" xmax="604667"/>
+                <Extent ymin="225967" xmin="611373" ymax="226347" xmax="611655"/>
                 <LayerSet/>
                 <Grid gridStyle="1" crossLength="3" intervalX="50" offsetX="0" intervalY="50" offsetY="0" gridFrameStyle="0" gridFrameWidth="2" show="1">
                     <symbol outputUnit="MM" alpha="1" type="line" name="">
@@ -448,7 +553,7 @@
                     </symbol>
                     <Annotation rightDirection="0" bottomDirection="1" format="0" topPosition="0" precision="0" leftDirection="0" rightPosition="0" bottomPosition="0" frameDistance="4" show="1" font="CadastraCondensed,8,-1,5,50,2,0,0,0,0" leftPosition="0" topDirection="1"/>
                 </Grid>
-                <ComposerItem width="185" x="15" y="38" rotation="0" height="249" frame="true" outlineWidth="0.2" zValue="5" lastValidViewScaleFactor="3.22819" id="" positionLock="true">
+                <ComposerItem width="185" x="15" y="38" rotation="0" height="249" frame="true" outlineWidth="0.2" zValue="5" lastValidViewScaleFactor="4.50909" id="" positionLock="true">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -492,7 +597,7 @@
         </maplayer>
         <maplayer minimumScale="4000" maximumScale="25000" type="raster" hasScaleBasedVisibilityFlag="1">
             <id>bpav_10000_sw20131205174025556</id>
-            <datasource>/opt/Geodaten/ch/so/kva/bpav/10000/sw/bpav_10000_sw.vrt</datasource>
+            <datasource>../../Geodaten/ch/so/kva/bpav/10000/sw/bpav_10000_sw.vrt</datasource>
             <title></title>
             <abstract></abstract>
             <layername>Basisplan</layername>
@@ -683,9 +788,9 @@
                 <edittype type="0" name="tid"/>
             </edittypes>
             <editorlayout>generatedlayout</editorlayout>
-            <editform></editform>
+            <editform>.</editform>
             <editforminit></editforminit>
-            <annotationform></annotationform>
+            <annotationform>.</annotationform>
             <excludeAttributesWMS/>
             <excludeAttributesWFS/>
             <attributeactions/>
@@ -861,9 +966,9 @@
                 <edittype type="0" name="ogc_fid"/>
             </edittypes>
             <editorlayout>generatedlayout</editorlayout>
-            <editform></editform>
+            <editform>.</editform>
             <editforminit></editforminit>
-            <annotationform></annotationform>
+            <annotationform>.</annotationform>
             <excludeAttributesWMS/>
             <excludeAttributesWFS/>
             <attributeactions/>
@@ -1074,7 +1179,7 @@
                 <edittype type="0" name="tid"/>
             </edittypes>
             <editorlayout>generatedlayout</editorlayout>
-            <editform></editform>
+            <editform>.</editform>
             <editforminit></editforminit>
             <annotationform>.</annotationform>
             <excludeAttributesWMS/>
@@ -1287,7 +1392,7 @@
                 <edittype type="0" name="tid"/>
             </edittypes>
             <editorlayout>generatedlayout</editorlayout>
-            <editform></editform>
+            <editform>.</editform>
             <editforminit></editforminit>
             <annotationform>.</annotationform>
             <excludeAttributesWMS/>
@@ -1458,9 +1563,9 @@
                 <edittype type="0" name="ogc_fid"/>
             </edittypes>
             <editorlayout>generatedlayout</editorlayout>
-            <editform></editform>
+            <editform>.</editform>
             <editforminit></editforminit>
-            <annotationform></annotationform>
+            <annotationform>.</annotationform>
             <excludeAttributesWMS/>
             <excludeAttributesWFS/>
             <attributeactions/>
@@ -1637,9 +1742,9 @@
                 <edittype type="0" name="tid"/>
             </edittypes>
             <editorlayout>generatedlayout</editorlayout>
-            <editform></editform>
+            <editform>.</editform>
             <editforminit></editforminit>
-            <annotationform></annotationform>
+            <annotationform>.</annotationform>
             <excludeAttributesWMS/>
             <excludeAttributesWFS/>
             <attributeactions/>
@@ -1820,7 +1925,7 @@
                 <edittype type="0" name="tid"/>
             </edittypes>
             <editorlayout>generatedlayout</editorlayout>
-            <editform></editform>
+            <editform>.</editform>
             <editforminit></editforminit>
             <annotationform>.</annotationform>
             <excludeAttributesWMS/>
@@ -1996,9 +2101,9 @@
                 <edittype type="0" name="y"/>
             </edittypes>
             <editorlayout>generatedlayout</editorlayout>
-            <editform></editform>
+            <editform>.</editform>
             <editforminit></editforminit>
-            <annotationform></annotationform>
+            <annotationform>.</annotationform>
             <excludeAttributesWMS/>
             <excludeAttributesWFS/>
             <attributeactions/>
@@ -2161,22 +2266,57 @@
                 <edittype type="0" name="text"/>
             </edittypes>
             <editorlayout>generatedlayout</editorlayout>
-            <editform></editform>
+            <editform>.</editform>
             <editforminit></editforminit>
-            <annotationform></annotationform>
+            <annotationform>.</annotationform>
             <excludeAttributesWMS/>
             <excludeAttributesWFS/>
             <attributeactions/>
         </maplayer>
     </projectlayers>
     <properties>
-        <SpatialRefSys>
-            <ProjectCrs type="QString">EPSG:4326</ProjectCrs>
-            <ProjectCRSID type="int">1919</ProjectCRSID>
-        </SpatialRefSys>
+        <WMSContactPerson type="QString">Mitarbeitende AGI</WMSContactPerson>
+        <WMSOnlineResource type="QString">http://www.sogis.ch</WMSOnlineResource>
+        <WMSContactOrganization type="QString">Amt für Geoinformation, Kanton Solothurn</WMSContactOrganization>
+        <WMSExtent type="QStringList">
+            <value>590000</value>
+            <value>210000</value>
+            <value>650000</value>
+            <value>270000</value>
+        </WMSExtent>
+        <WMSKeywordList type="QStringList">
+            <value></value>
+        </WMSKeywordList>
         <Paths>
             <Absolute type="bool">false</Absolute>
         </Paths>
+        <WMSServiceTitle type="QString">Webgis Fileverifikation Amtliche Vermessung</WMSServiceTitle>
+        <WFSLayers type="QStringList"/>
+        <WMSContactMail type="QString">agi@bd.so.ch</WMSContactMail>
+        <PositionPrecision>
+            <DecimalPlaces type="int">2</DecimalPlaces>
+            <Automatic type="bool">true</Automatic>
+            <DegreeFormat type="QString">D</DegreeFormat>
+        </PositionPrecision>
+        <WMSServiceCapabilities type="bool">true</WMSServiceCapabilities>
+        <WMSContactPhone type="QString">++41 (0) 32 627 75 92</WMSContactPhone>
+        <WMSServiceAbstract type="QString"></WMSServiceAbstract>
+        <WMSAddWktGeometry type="bool">true</WMSAddWktGeometry>
+        <Measure>
+            <Ellipsoid type="QString">NONE</Ellipsoid>
+        </Measure>
+        <WMSCrsList type="QStringList">
+            <value>EPSG:21781</value>
+            <value>EPSG:4326</value>
+            <value>EPSG:3035</value>
+            <value>EPSG:32632</value>
+            <value>EPSG:3395</value>
+        </WMSCrsList>
+        <WFSTLayers>
+            <Insert type="QStringList"/>
+            <Update type="QStringList"/>
+            <Delete type="QStringList"/>
+        </WFSTLayers>
         <Gui>
             <SelectionColorBluePart type="int">0</SelectionColorBluePart>
             <CanvasColorGreenPart type="int">255</CanvasColorGreenPart>
@@ -2186,9 +2326,30 @@
             <SelectionColorGreenPart type="int">255</SelectionColorGreenPart>
             <CanvasColorBluePart type="int">255</CanvasColorBluePart>
         </Gui>
-        <PositionPrecision>
-            <DecimalPlaces type="int">2</DecimalPlaces>
-            <Automatic type="bool">true</Automatic>
-        </PositionPrecision>
+        <Identify>
+            <disabledLayers type="QStringList">
+                <value>Amtliche_Vermessung__grau_20131205173952643</value>
+                <value>bpav_10000_sw20131205174025556</value>
+            </disabledLayers>
+        </Identify>
+        <Macros>
+            <pythonCode type="QString"></pythonCode>
+        </Macros>
+        <WMSAccessConstraints type="QString"></WMSAccessConstraints>
+        <SpatialRefSys>
+            <ProjectCRSProj4String type="QString">+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</ProjectCRSProj4String>
+            <ProjectCrs type="QString">EPSG:4326</ProjectCrs>
+            <ProjectCRSID type="int">1919</ProjectCRSID>
+        </SpatialRefSys>
+        <DefaultStyles>
+            <Fill type="QString"></Fill>
+            <Line type="QString"></Line>
+            <Marker type="QString"></Marker>
+            <RandomColors type="bool">true</RandomColors>
+            <AlphaInt type="int">255</AlphaInt>
+            <ColorRamp type="QString"></ColorRamp>
+        </DefaultStyles>
+        <WMSFees type="QString"></WMSFees>
+        <WMSUrl type="QString"></WMSUrl>
     </properties>
 </qgis>

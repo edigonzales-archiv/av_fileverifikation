@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>test1</name>
+    <name>trans_bfs_nummer</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -66,9 +66,9 @@
     <clusterschemas>
     </clusterschemas>
   <created_user>-</created_user>
-  <created_date>2013&#x2f;12&#x2f;05 14&#x3a;48&#x3a;50.880</created_date>
+  <created_date>2013&#x2f;12&#x2f;06 14&#x3a;04&#x3a;07.360</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2013&#x2f;12&#x2f;05 14&#x3a;48&#x3a;50.880</modified_date>
+  <modified_date>2013&#x2f;12&#x2f;06 14&#x3a;04&#x3a;07.360</modified_date>
   </info>
   <notepads>
   </notepads>
@@ -89,10 +89,8 @@
     </attributes>
   </connection>
   <order>
-  <hop> <from>BFS-Nummern</from><to>Spinnennetz</to><enabled>N</enabled> </hop>
-  <hop> <from>BFS-Nummern</from><to>Shortest Line</to><enabled>N</enabled> </hop>
-  <hop> <from>BFS-Nummern</from><to>Falscher Anfangspunkt</to><enabled>N</enabled> </hop>
-  <hop> <from>BFS-Nummern</from><to>Doppelte Achsen</to><enabled>N</enabled> </hop>
+  <hop> <from>BFS-Nummern</from><to>Copy rows to result</to><enabled>Y</enabled> </hop>
+  <hop> <from>BFS-Nummern</from><to>Write to log</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>BFS-Nummern</name>
@@ -114,15 +112,15 @@
     <lazy_conversion_active>N</lazy_conversion_active>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>397</xloc>
-      <yloc>54</yloc>
+      <xloc>358</xloc>
+      <yloc>201</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Doppelte Achsen</name>
-    <type>ExecSQL</type>
+    <name>Copy rows to result</name>
+    <type>RowsToResult</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -131,33 +129,17 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <connection>pg_rosebud2</connection>
-    <execute_each_row>Y</execute_each_row>
-    <single_statement>N</single_statement>
-    <replace_variables>Y</replace_variables>
-    <quoteString>N</quoteString>
-    <sql>DELETE FROM av_fileverifikation.t_doppelte_achsen WHERE gem_bfs &#x3d; &#x3f;&#x3b;&#xa;&#xa;INSERT INTO av_fileverifikation.t_doppelte_achsen &#x28;the_geom, gem_bfs&#x29;&#xa;SELECT ST_GeomFromEWKB&#x28;geom&#x29; as the_geom, &#x3f;&#xa;FROM&#xa;&#x28;&#xa; SELECT ST_AsEWKB&#x28;the_geom&#x29; as geom&#xa; FROM&#xa; &#x28;&#xa;  SELECT CASE WHEN ST_X&#x28;sp&#x29; &#x3c; ST_X&#x28;ep&#x29; THEN ST_SnapToGrid&#x28;ST_MakeLine&#x28;sp,ep&#x29;, 0.001&#x29;  &#xa;	  ELSE ST_SnapToGrid&#x28;ST_MakeLine&#x28;ep,sp&#x29;, 0.001&#x29;&#xa;        END as the_geom&#xa;  FROM&#xa;  &#x28;&#xa;   SELECT&#xa;    ST_PointN&#x28;geom, generate_series&#x28;1, ST_NPoints&#x28;geom&#x29;-1&#x29;&#x29; as sp,&#xa;    ST_PointN&#x28;geom, generate_series&#x28;2, ST_NPoints&#x28;geom&#x29;  &#x29;&#x29; as ep&#xa;   FROM&#xa;   &#x28;&#xa;    SELECT &#x28;&#x28;ST_Dump&#x28;&#x28;geometrie&#x29;&#x29;&#x29;.geom&#x29;&#xa;    FROM av_avdpool_ng.gebaeudeadressen_strassenstueck&#xa;    WHERE gem_bfs &#x3d; &#x3f;&#xa;   &#x29; AS linestrings&#xa;  &#x29; AS segments&#xa; &#x29; as a&#xa; GROUP BY st_asewkb&#x28;the_geom&#x29;&#xa; HAVING count&#x28;1&#x29;&#x3e;1&#xa;&#x29; as foo&#x3b;</sql>
-    <set_params>N</set_params>
-    <insert_field/>
-    <update_field/>
-    <delete_field/>
-    <read_field/>
-    <arguments>
-       <argument><name>gem_bfs</name></argument>
-       <argument><name>gem_bfs</name></argument>
-       <argument><name>gem_bfs</name></argument>
-    </arguments>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>696</xloc>
-      <yloc>252</yloc>
+      <xloc>491</xloc>
+      <yloc>201</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Falscher Anfangspunkt</name>
-    <type>ExecSQL</type>
+    <name>Write to log</name>
+    <type>WriteToLog</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -166,98 +148,17 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <connection>pg_rosebud2</connection>
-    <execute_each_row>Y</execute_each_row>
-    <single_statement>N</single_statement>
-    <replace_variables>Y</replace_variables>
-    <quoteString>N</quoteString>
-    <sql>DELETE FROM av_fileverifikation.t_falscher_anfangspunkt WHERE gem_bfs &#x3d; &#x3f;&#x3b;&#xa;&#xa;INSERT INTO av_fileverifikation.t_falscher_anfangspunkt &#x28;the_geom, gem_bfs&#x29;&#xa;SELECT the_geom, gem_bfs&#xa;FROM&#xa;&#x28;&#xa; SELECT ST_SnapToGrid&#x28;anfangspunkt,0.001&#x29; as the_geom, gem_bfs&#xa; FROM av_avdpool_ng.gebaeudeadressen_strassenstueck&#xa; WHERE gem_bfs &#x3d; &#x3f;&#xa;&#xa; EXCEPT&#xa;&#xa; SELECT ST_SnapToGrid&#x28;&#x28;ST_DumpPoints&#x28;ST_Boundary&#x28;ST_MakeLine&#x28;ST_StartPoint&#x28;geometrie&#x29;,ST_EndPoint&#x28;geometrie&#x29;&#x29;&#x29;&#x29;&#x29;.geom,0.001&#x29; as the_geom, gem_bfs&#xa; FROM av_avdpool_ng.gebaeudeadressen_strassenstueck&#xa; WHERE gem_bfs &#x3d; &#x3f;&#xa;&#x29; as a&#xa;WHERE geometrytype&#x28;the_geom&#x29; &#x3d; &#x27;POINT&#x27;&#x3b;</sql>
-    <set_params>N</set_params>
-    <insert_field/>
-    <update_field/>
-    <delete_field/>
-    <read_field/>
-    <arguments>
-       <argument><name>gem_bfs</name></argument>
-       <argument><name>gem_bfs</name></argument>
-       <argument><name>gem_bfs</name></argument>
-    </arguments>
+      <loglevel>log_level_basic</loglevel>
+      <displayHeader>Y</displayHeader>
+      <limitRows>N</limitRows>
+      <limitRowsNumber>0</limitRowsNumber>
+      <logmessage>gem_bfs aus Datenbank lesen.</logmessage>
+    <fields>
+      </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>525</xloc>
-      <yloc>316</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Shortest Line</name>
-    <type>ExecSQL</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>pg_rosebud2</connection>
-    <execute_each_row>Y</execute_each_row>
-    <single_statement>N</single_statement>
-    <replace_variables>Y</replace_variables>
-    <quoteString>N</quoteString>
-    <sql>DELETE FROM av_fileverifikation.t_shortestline_hausnummerpos WHERE gem_bfs &#x3d; &#x3f;&#x3b;&#xa;&#xa;INSERT INTO av_fileverifikation.t_shortestline_hausnummerpos &#x28;strname, hausnummer, a_tid, b_tid, lok_tid, the_geom, gem_bfs&#x29; &#xa;SELECT d.&#x22;text&#x22; as strnam, b.hausnummer, a.tid as a_tid, b.tid as b_tid, &#xa;       b.gebaeudeeingang_von as lok_tid, ST_ShortestLine&#x28;a.pos, c.geometrie&#x29; as the_geom, a.gem_bfs&#xa;FROM av_fileverifikation.v_gebaeudeadressen_hausnummerpos as a, &#xa;     av_avdpool_ng.gebaeudeadressen_gebaeudeeingang as b,&#xa;     &#x28;&#xa;       SELECT ST_Union&#x28;geometrie&#x29; as geometrie, strassenstueck_von&#xa;       FROM av_avdpool_ng.gebaeudeadressen_strassenstueck&#xa;       WHERE gem_bfs &#x3d; &#x3f;&#xa;       GROUP BY strassenstueck_von&#xa;     &#x29; as c,&#xa;     av_avdpool_ng.gebaeudeadressen_lokalisationsname as d&#xa;WHERE a.gem_bfs &#x3d; &#x3f;&#xa;AND b.gem_bfs &#x3d; &#x3f;&#xa;AND d.gem_bfs &#x3d; &#x3f;&#xa;AND a.hausnummerpos_von &#x3d; b.tid&#xa;AND b.gebaeudeeingang_von &#x3d; c.strassenstueck_von&#xa;AND d.benannte &#x3d; b.gebaeudeeingang_von&#x3b;</sql>
-    <set_params>N</set_params>
-    <insert_field/>
-    <update_field/>
-    <delete_field/>
-    <read_field/>
-    <arguments>
-       <argument><name>gem_bfs</name></argument>
-       <argument><name>gem_bfs</name></argument>
-       <argument><name>gem_bfs</name></argument>
-       <argument><name>gem_bfs</name></argument>
-       <argument><name>gem_bfs</name></argument>
-    </arguments>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>332</xloc>
-      <yloc>324</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Spinnennetz</name>
-    <type>ExecSQL</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>pg_rosebud2</connection>
-    <execute_each_row>Y</execute_each_row>
-    <single_statement>N</single_statement>
-    <replace_variables>Y</replace_variables>
-    <quoteString>N</quoteString>
-    <sql>DELETE FROM av_fileverifikation.t_gebaeudeadressen_spinnennetz WHERE gem_bfs &#x3d; &#x3f;&#x3b;&#xa;&#xa;INSERT INTO av_fileverifikation.t_gebaeudeadressen_spinnennetz &#x28;tid, line, hausnummer, gem_bfs&#x29; &#xa;SELECT a.tid, ST_GeometryFromText&#x28;&#x28;&#x28;&#x28;&#x28;&#x28;&#x28;&#x28;&#x27;LINESTRING&#x28;&#x27;&#x3a;&#x3a;text &#x7c;&#x7c; ST_X&#x28;a.lage&#x29;&#x3a;&#x3a;text&#x29; &#x7c;&#x7c; &#x27; &#x27;&#x3a;&#x3a;text&#x29; &#x7c;&#x7c; ST_Y&#x28;a.lage&#x29;&#x3a;&#x3a;text&#x29; &#x7c;&#x7c; &#x27;,&#x27;&#x3a;&#x3a;text&#x29; &#x7c;&#x7c; ST_X&#x28;c.pos&#x29;&#x3a;&#x3a;text&#x29; &#x7c;&#x7c; &#x27; &#x27;&#x3a;&#x3a;text&#x29; &#x7c;&#x7c; ST_Y&#x28;c.pos&#x29;&#x3a;&#x3a;text&#x29; &#x7c;&#x7c; &#x27;&#x29;&#x27;&#x3a;&#x3a;text, 21781&#x29; AS line, &#xa;       a.hausnummer, a.gem_bfs&#xa;FROM av_avdpool_ng.gebaeudeadressen_gebaeudeeingang a, &#xa;&#x28; &#xa; SELECT a.atid, a.btid, a.min &#xa; FROM av_fileverifikation.v_distanz_gebaeudeeingang_lokalisationsnamepos a, &#xa;  &#x28; &#xa;    SELECT v_distanz_gebaeudeeingang_lokalisationsnamepos.atid, min&#x28;v_distanz_gebaeudeeingang_lokalisationsnamepos.min&#x29; AS min&#xa;    FROM av_fileverifikation.v_distanz_gebaeudeeingang_lokalisationsnamepos &#xa;    WHERE gem_bfs &#x3d; &#x3f;&#xa;    GROUP BY v_distanz_gebaeudeeingang_lokalisationsnamepos.atid&#xa;  &#x29; b &#xa; WHERE a.min &#x3d; b.min &#xa; AND a.atid&#x3a;&#x3a;text &#x3d; b.atid&#x3a;&#x3a;text&#xa;&#x29; b, &#xa;av_fileverifikation.v_gebaeudeadressen_lokalisationsnamepos c &#xa;WHERE a.gem_bfs &#x3d; &#x3f; &#xa;AND b.atid&#x3a;&#x3a;text &#x3d; a.tid&#x3a;&#x3a;text &#xa;AND b.btid&#x3a;&#x3a;text &#x3d; c.tid&#x3a;&#x3a;text&#x3b;</sql>
-    <set_params>N</set_params>
-    <insert_field/>
-    <update_field/>
-    <delete_field/>
-    <read_field/>
-    <arguments>
-       <argument><name>gem_bfs</name></argument>
-       <argument><name>gem_bfs</name></argument>
-       <argument><name>gem_bfs</name></argument>
-    </arguments>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>194</xloc>
-      <yloc>266</yloc>
+      <xloc>353</xloc>
+      <yloc>349</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

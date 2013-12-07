@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.0"
+   width="100%"
+   height="100%"
+   viewBox="0 0 450 500"
+   id="svg2">
+  <title
+     id="title4">North Arrow 3, Simple Triangular Symmetric</title>
+  <defs
+     id="defs17" />
+  <metadata
+     id="metadata6">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>North Arrow 3, Simple Triangular Symmetric</dc:title>
+        <dc:date>2009-08-11</dc:date>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Silvio Grosso</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <cc:license
+           rdf:resource="http://creativecommons.org/licenses/publicdomain/" />
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/licenses/publicdomain/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <path
+     d="M 228.10174,310.27147 227.32498,146.56345 336.13166,368.71759 228.10174,310.27147 z"
+     id="right_triangle_filled"
+     style="fill:#000000" />
+  <path
+     d="M 225.07975,308.72439 224.54314,159.3776 113.2595,360.2599 225.07975,308.72439 z"
+     id="left_triangle_not_filled"
+     style="fill:none;stroke:#000000;stroke-width:6.63193703" />
+  <path
+     d="m 184.12917,63.467593 h 24.37453 l 31.79012,46.964237 V 63.467593 h 24.60627 v 84.904227 h -24.60627 l -31.62158,-46.6253 v 46.6253 H 184.12917 V 63.467593 z"
+     id="character_n"
+     style="fill:#000000" />
+</svg>
