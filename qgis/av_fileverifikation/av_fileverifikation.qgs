@@ -29,25 +29,25 @@
                 <legendlayerfile isInOverview="0" layerid="mbsf20131205175630924" visible="1"/>
             </filegroup>
         </legendlayer>
-        <legendgroup open="false" checked="Qt::Unchecked" name="Einzelobjekte">
-            <legendgroup open="false" checked="Qt::Unchecked" name="Doppelte EO.Linien">
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Doppelte EO.Linien (Segmente)" showFeatureCount="0">
+        <legendgroup open="true" checked="Qt::Unchecked" name="Einzelobjekte">
+            <legendgroup open="true" checked="Qt::Unchecked" name="Doppelte EO.Linien">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Doppelte_EO_Linien" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="t_doppelte_eo_linien20131206150641864" visible="0"/>
                     </filegroup>
                 </legendlayer>
             </legendgroup>
         </legendgroup>
-        <legendgroup open="false" checked="Qt::Unchecked" name="Gebäudeadressen">
-            <legendgroup open="false" checked="Qt::Unchecked" name="Doppelte Achsen">
-                <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="Doppelte Achsen (Segment)" showFeatureCount="0">
+        <legendgroup open="true" checked="Qt::Unchecked" name="Gebäudeadressen">
+            <legendgroup open="true" checked="Qt::Unchecked" name="Doppelte Achsen">
+                <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="Doppelte_Achsensegmente" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="t_doppelte_achsen20131206114255860" visible="0"/>
                     </filegroup>
                 </legendlayer>
             </legendgroup>
-            <legendgroup open="false" checked="Qt::Unchecked" name="Falscher Anfangspunkt">
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Falscher Anfangspunkt (Punkt)" showFeatureCount="0">
+            <legendgroup open="true" checked="Qt::Unchecked" name="Falscher Anfangspunkt">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Falscher_Anfangspunkt" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="t_falscher_anfangspunkt20131206113219586" visible="0"/>
                     </filegroup>
@@ -431,18 +431,18 @@
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
             </ComposerLegend>
-            <ComposerLabel valign="64" labelText="Amt für Geoinformation, SO!GIS Koordination, Rötistrasse 4, 4501 Solothurn" halign="1" margin="0">
-                <LabelFont description="Frutiger 55 Roman,6,-1,5,50,0,0,0,0,0"/>
-                <FontColor red="0" blue="0" green="0"/>
-                <ComposerItem width="4" x="11" y="190" rotation="270" height="97.0659" frame="false" outlineWidth="0.3" zValue="16" lastValidViewScaleFactor="4.60664" id="" positionLock="true">
-                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
-                    <BackgroundColor alpha="0" red="255" blue="255" green="255"/>
-                </ComposerItem>
-            </ComposerLabel>
             <ComposerLabel valign="64" labelText="Tel. 032 627 75 92, Fax 032 627 22 14, E-Mail: sogis@bd.so.ch, Web: www.sogis.ch" halign="2" margin="0">
                 <LabelFont description="Frutiger 55 Roman,6,-1,5,50,0,0,0,0,0"/>
                 <FontColor red="0" blue="0" green="0"/>
                 <ComposerItem width="4" x="11" y="10" rotation="270" height="98.2829" frame="false" outlineWidth="0.3" zValue="16" lastValidViewScaleFactor="6.45638" id="" positionLock="true">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="0" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerLabel>
+            <ComposerLabel valign="64" labelText="Amt für Geoinformation, SO!GIS Koordination, Rötistrasse 4, 4501 Solothurn" halign="1" margin="0">
+                <LabelFont description="Frutiger 55 Roman,6,-1,5,50,0,0,0,0,0"/>
+                <FontColor red="0" blue="0" green="0"/>
+                <ComposerItem width="4" x="11" y="190" rotation="270" height="97.0659" frame="false" outlineWidth="0.3" zValue="16" lastValidViewScaleFactor="4.60664" id="" positionLock="true">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="0" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -453,50 +453,10 @@
                     <BackgroundColor alpha="0" red="255" blue="255" green="255"/>
                 </ComposerItem>
             </ComposerPicture>
-            <ComposerLabel valign="32" labelText="Amt für Geoinformation" halign="1" margin="0">
-                <LabelFont description="Frutiger 55 Roman,7,-1,5,75,1,0,0,0,0"/>
-                <FontColor red="0" blue="0" green="0"/>
-                <ComposerItem width="38.2669" x="17" y="20" rotation="0" height="4" frame="false" outlineWidth="0.3" zValue="10" lastValidViewScaleFactor="4.60664" id="" positionLock="true">
-                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
-                    <BackgroundColor alpha="0" red="255" blue="255" green="255"/>
-                </ComposerItem>
-            </ComposerLabel>
-            <ComposerLabel valign="32" labelText="Amtliche Vermessung" halign="1" margin="0">
-                <LabelFont description="Frutiger 55 Roman,7,-1,5,50,1,0,0,0,0"/>
-                <FontColor red="0" blue="0" green="0"/>
-                <ComposerItem width="35.7058" x="17" y="23" rotation="0" height="4" frame="false" outlineWidth="0.3" zValue="10" lastValidViewScaleFactor="4.60664" id="" positionLock="true">
-                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
-                    <BackgroundColor alpha="0" red="255" blue="255" green="255"/>
-                </ComposerItem>
-            </ComposerLabel>
-            <ComposerLabel valign="32" labelText="Rötistrasse 4&#xa;4501 Solothurn" halign="1" margin="0">
-                <LabelFont description="Frutiger 55 Roman,7,-1,5,50,1,0,0,0,0"/>
-                <FontColor red="0" blue="0" green="0"/>
-                <ComposerItem width="35.7058" x="17" y="29" rotation="0" height="8.06016" frame="false" outlineWidth="0.3" zValue="10" lastValidViewScaleFactor="4.60664" id="" positionLock="true">
-                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
-                    <BackgroundColor alpha="0" red="255" blue="255" green="255"/>
-                </ComposerItem>
-            </ComposerLabel>
-            <ComposerLabel valign="32" labelText="Telefon 032 627 75 92&#xa;Telefax 032 627 75 98" halign="1" margin="0">
-                <LabelFont description="Frutiger 55 Roman,7,-1,5,50,1,0,0,0,0"/>
-                <FontColor red="0" blue="0" green="0"/>
-                <ComposerItem width="28.2872" x="65" y="20" rotation="0" height="6.81699" frame="false" outlineWidth="0.3" zValue="10" lastValidViewScaleFactor="4.60664" id="" positionLock="true">
-                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
-                    <BackgroundColor alpha="0" red="255" blue="255" green="255"/>
-                </ComposerItem>
-            </ComposerLabel>
-            <ComposerLabel valign="32" labelText="agi@bd.so.ch&#xa;www.agi.so.ch" halign="1" margin="0">
-                <LabelFont description="Frutiger 55 Roman,7,-1,5,50,1,0,0,0,0"/>
-                <FontColor red="0" blue="0" green="0"/>
-                <ComposerItem width="28.2872" x="65" y="29" rotation="0" height="6.81699" frame="false" outlineWidth="0.3" zValue="10" lastValidViewScaleFactor="4.60664" id="" positionLock="true">
-                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
-                    <BackgroundColor alpha="0" red="255" blue="255" green="255"/>
-                </ComposerItem>
-            </ComposerLabel>
-            <ComposerLabel valign="32" labelText="Aus den Daten können keine rechtlichen Ansprüche, &#xa;insbesondere auch keine Haftung des Kantons abgeleitet werden." halign="1" margin="0">
+            <ComposerLabel valign="32" labelText="$CURRENT_DATE(dd.MM.yyyy)" halign="1" margin="0">
                 <LabelFont description="Frutiger 55 Roman,7,-1,5,50,0,0,0,0,0"/>
                 <FontColor red="0" blue="0" green="0"/>
-                <ComposerItem width="79.1052" x="105" y="29" rotation="0" height="6.81699" frame="false" outlineWidth="0.3" zValue="10" lastValidViewScaleFactor="2.22483" id="" positionLock="true">
+                <ComposerItem width="15.6684" x="128" y="20" rotation="0" height="3.91709" frame="false" outlineWidth="0.3" zValue="10" lastValidViewScaleFactor="2.22483" id="" positionLock="true">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="0" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -509,10 +469,50 @@
                     <BackgroundColor alpha="0" red="255" blue="255" green="255"/>
                 </ComposerItem>
             </ComposerLabel>
-            <ComposerLabel valign="32" labelText="$CURRENT_DATE(dd.MM.yyyy)" halign="1" margin="0">
+            <ComposerLabel valign="32" labelText="Aus den Daten können keine rechtlichen Ansprüche, &#xa;insbesondere auch keine Haftung des Kantons abgeleitet werden." halign="1" margin="0">
                 <LabelFont description="Frutiger 55 Roman,7,-1,5,50,0,0,0,0,0"/>
                 <FontColor red="0" blue="0" green="0"/>
-                <ComposerItem width="15.6684" x="128" y="20" rotation="0" height="3.91709" frame="false" outlineWidth="0.3" zValue="10" lastValidViewScaleFactor="2.22483" id="" positionLock="true">
+                <ComposerItem width="79.1052" x="105" y="29" rotation="0" height="6.81699" frame="false" outlineWidth="0.3" zValue="10" lastValidViewScaleFactor="2.22483" id="" positionLock="true">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="0" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerLabel>
+            <ComposerLabel valign="32" labelText="agi@bd.so.ch&#xa;www.agi.so.ch" halign="1" margin="0">
+                <LabelFont description="Frutiger 55 Roman,7,-1,5,50,1,0,0,0,0"/>
+                <FontColor red="0" blue="0" green="0"/>
+                <ComposerItem width="28.2872" x="65" y="29" rotation="0" height="6.81699" frame="false" outlineWidth="0.3" zValue="10" lastValidViewScaleFactor="4.60664" id="" positionLock="true">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="0" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerLabel>
+            <ComposerLabel valign="32" labelText="Telefon 032 627 75 92&#xa;Telefax 032 627 75 98" halign="1" margin="0">
+                <LabelFont description="Frutiger 55 Roman,7,-1,5,50,1,0,0,0,0"/>
+                <FontColor red="0" blue="0" green="0"/>
+                <ComposerItem width="28.2872" x="65" y="20" rotation="0" height="6.81699" frame="false" outlineWidth="0.3" zValue="10" lastValidViewScaleFactor="4.60664" id="" positionLock="true">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="0" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerLabel>
+            <ComposerLabel valign="32" labelText="Rötistrasse 4&#xa;4501 Solothurn" halign="1" margin="0">
+                <LabelFont description="Frutiger 55 Roman,7,-1,5,50,1,0,0,0,0"/>
+                <FontColor red="0" blue="0" green="0"/>
+                <ComposerItem width="35.7058" x="17" y="29" rotation="0" height="8.06016" frame="false" outlineWidth="0.3" zValue="10" lastValidViewScaleFactor="4.60664" id="" positionLock="true">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="0" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerLabel>
+            <ComposerLabel valign="32" labelText="Amtliche Vermessung" halign="1" margin="0">
+                <LabelFont description="Frutiger 55 Roman,7,-1,5,50,1,0,0,0,0"/>
+                <FontColor red="0" blue="0" green="0"/>
+                <ComposerItem width="35.7058" x="17" y="23" rotation="0" height="4" frame="false" outlineWidth="0.3" zValue="10" lastValidViewScaleFactor="4.60664" id="" positionLock="true">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="0" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerLabel>
+            <ComposerLabel valign="32" labelText="Amt für Geoinformation" halign="1" margin="0">
+                <LabelFont description="Frutiger 55 Roman,7,-1,5,75,1,0,0,0,0"/>
+                <FontColor red="0" blue="0" green="0"/>
+                <ComposerItem width="38.2669" x="17" y="20" rotation="0" height="4" frame="false" outlineWidth="0.3" zValue="10" lastValidViewScaleFactor="4.60664" id="" positionLock="true">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="0" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -978,7 +978,7 @@
             <datasource>dbname='rosebud2' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='ogc_fid' srid=21781 type=LINESTRING table="av_fileverifikation"."t_doppelte_achsen" (the_geom) sql=</datasource>
             <title></title>
             <abstract></abstract>
-            <layername>Doppelte Achsen (Segment)</layername>
+            <layername>Doppelte_Achsensegmente</layername>
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
@@ -1191,7 +1191,7 @@
             <datasource>dbname='rosebud2' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='ogc_fid' srid=21781 type=LINESTRING table="av_fileverifikation"."t_doppelte_eo_linien" (the_geom) sql=</datasource>
             <title></title>
             <abstract></abstract>
-            <layername>Doppelte EO.Linien (Segmente)</layername>
+            <layername>Doppelte_EO_Linien</layername>
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
@@ -1404,7 +1404,7 @@
             <datasource>dbname='rosebud2' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='ogc_fid' srid=21781 type=POINT table="av_fileverifikation"."t_falscher_anfangspunkt" (the_geom) sql=</datasource>
             <title></title>
             <abstract></abstract>
-            <layername>Falscher Anfangspunkt (Punkt)</layername>
+            <layername>Falscher_Anfangspunkt</layername>
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
@@ -2291,7 +2291,12 @@
             <Absolute type="bool">false</Absolute>
         </Paths>
         <WMSServiceTitle type="QString">Webgis Fileverifikation Amtliche Vermessung</WMSServiceTitle>
-        <WFSLayers type="QStringList"/>
+        <WFSLayers type="QStringList">
+            <value>mbsf20131205175630924</value>
+            <value>t_doppelte_achsen20131206114255860</value>
+            <value>t_doppelte_eo_linien20131206150641864</value>
+            <value>t_falscher_anfangspunkt20131206113219586</value>
+        </WFSLayers>
         <WMSContactMail type="QString">agi@bd.so.ch</WMSContactMail>
         <PositionPrecision>
             <DecimalPlaces type="int">2</DecimalPlaces>
